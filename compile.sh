@@ -101,7 +101,7 @@ then
 
       if $found
              then
-                   now=$(date +"%m_%d_%Y_%M:%S")
+                   now="$(date +"%m_%d_%Y_%M:%S").o"
                           `gcc -Wall $1 -o $now `;
                                       output=`./$now`;
                                       echo "$output";
