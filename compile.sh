@@ -66,8 +66,8 @@ while getopts ":h" option; do
    esac
 done
 #check extension
-testn= `bash testExtension.sh "$1"`
-echo "$testn"
+###testn= `bash testExtension.sh "$1"`
+######echo "$testn"
 arg="$1"
 ext=".c"
 echo "$ext"
