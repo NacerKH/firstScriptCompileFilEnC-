@@ -1,7 +1,10 @@
 # firstScriptCompileFilEnC-
  First Work with Lunix script which will be used to compile C files. 
  
- 
+## help :option <br/>
+
+`bash compile.sh - h `<br/>
+
  ## Usage Version 1 <br/>
  `make your file .c in Some Directory of Compile.sh ` <br/>
  `in terminal Write this Cmd  bash Compile.sh  and put the file it was u create  in some line  ` <br/>
