@@ -65,39 +65,52 @@ while getopts ":h" option; do
          exit;;
    esac
 done
-#check extension
-###testn= `bash testExtension.sh "$1"`
-######echo "$testn"
+#check extension It must .c 
+echo '***********************************************************************'
+echo '###################¤ welcome Gang ¤ ################################# '
+echo '**********************************************************************'
+###Declaration Variable 
 arg="$1"
 ext=".c"
-echo "$ext"
-echo "${arg: -2}"
- if [[ "${arg: -2}" == "$ext" ]];
- then
-	test=true             
-else
-echo " no c file to compile"
-fi	
-
-#find if the this file in current directory
 found=false
-if $test 
+test=false
+
+echo "############ Your File U must input $ext Extension !!!################# "
+
+echo "Your File with Extension  ${arg: -2}  "
+########FUNCTION CHECK THE Extension#########################################
+CheckExtension(){
+  	 if [[ "${arg: -2}" == "$ext" ]];
+		 then
+       			  test=true
+	else
+echo "####### Sorry  Mec You File NOt .c  Try again With Correct Extension#####"
+echo '########################################################################'
+
+ exit;
+	fi
+		}
+ ###########################END FUNCTION CHECK EXTENSION#####################
+#####################FUNCTION CHECK IF THE FILE IN CURRENT DIRECTORY########
+
+CheckDirectory(){
+
+ if $test
 then
 
    for fich in `ls . `
       do
           if [ -f $fich ];
                then
-                	 if  [ "$1" == "$fich" ]; 
-		                then
-                                   
-			         	found=true
-		
-	               	fi
+                         if  [ "$1" == "$fich" ];
+                                then
+
+                                        found=true
+
+                        fi
          fi
 
     done
-
 
       if $found
              then
@@ -106,12 +119,22 @@ then
                                       output=`./$now`;
                                       echo "$output";
                                        echo "THank You For Use My Script :° ";
-	
 
-    else 
+
+    else
 
         echo "Absence Of file this Directory"
 
-fi 
+fi
 
-fi	
+fi
+
+}
+###################Main#####################################################
+#####CALL THE FUNCTION CHECK	
+CheckExtension
+
+
+####CALL FUNCTION CHECK DIRECTORY
+CheckDirectory "$arg"
+ 
