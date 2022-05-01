@@ -1,4 +1,4 @@
-# firstScriptCompileFilEnC-
+# Script Compile File .C 
  First Work with Lunix script which will be used to compile C files. 
  
 ## help :option <br/>
